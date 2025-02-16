@@ -7,9 +7,12 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-include_directories(_inc)
+include_directories(_inc _inc/base)
 aux_source_directory(_src SOURCES)
+aux_source_directory(_src/base SOURCES)
+
 aux_source_directory(_src TEST_SOURCES)
+aux_source_directory(_src/base TEST_SOURCES)
 list(FILTER TEST_SOURCES EXCLUDE REGEX ".*main\\.cpp")
 aux_source_directory(_test TEST_SOURCES)
 
@@ -24,8 +27,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -g -Wfatal-errors -Werror=unini
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -O3 -march=native -w")                                                         # for release
 
 
-set(EXE_NAME "out.exe")
-add_executable(${EXE_NAME} ${SOURCES})
+set(EXE_NAME "bmp.exe")
+# add_executable(${EXE_NAME} ${SOURCES})
+add_library(${EXE_NAME} STATIC ${SOURCES})
 target_compile_definitions(${EXE_NAME} PRIVATE LINUX)
 set_target_properties(${EXE_NAME} PROPERTIES COMPILE_FLAGS "-m64" LINK_FLAGS "-m64")
 

@@ -1,6 +1,9 @@
 #include "__preprocessor__.h"
 #include "__time_stamp__.h"
 
+#include "Bmp.h"
+#include "RGB.h"
+
 int main(int argc, char* argv[])
 {
     srand(time(NULL));
