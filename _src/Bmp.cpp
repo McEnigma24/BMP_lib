@@ -1,6 +1,6 @@
 #include "Bmp.h"
 
-void BMP_static::save(const string& file_name, const vector<RGB>& my_pixel, const u32 WIDTH, const u32 HEIGHT)
+void BMP_static::save(const string& file_name, const vector<Bmp_RGB>& my_pixel, const u32 WIDTH, const u32 HEIGHT)
 {
     ofstream f;
     f.open(file_name.c_str(), std::ios::out | std::ios::binary);
@@ -74,7 +74,7 @@ void BMP_static::save(const string& file_name, const vector<RGB>& my_pixel, cons
     {
         for (int x = 0; x < WIDTH; x++)
         {
-            RGB current_color = my_pixel[UTILS::convert_2d_to_1d(x, y, WIDTH)];
+            Bmp_RGB current_color = my_pixel[UTILS::convert_2d_to_1d(x, y, WIDTH)];
 
             unsigned char COLOR[] = {current_color.get_b(), current_color.get_g(), current_color.get_r()};
             f.write(reinterpret_cast<char*>(COLOR), 3);

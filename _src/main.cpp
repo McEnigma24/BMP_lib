@@ -2,7 +2,7 @@
 #include "__time_stamp__.h"
 
 #include "Bmp.h"
-#include "RGB.h"
+#include "Bmp_RGB.h"
 
 int main(int argc, char* argv[])
 {
