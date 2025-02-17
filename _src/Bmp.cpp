@@ -1,6 +1,6 @@
 #include "Bmp.h"
 
-void BMP_static::save(const string& file_name, const vector<Bmp_RGB>& my_pixel, const u32 WIDTH, const u32 HEIGHT)
+void BMP_static::save(const string& file_name, Bmp_RGB* my_pixel, const u32 WIDTH, const u32 HEIGHT)
 {
     ofstream f;
     f.open(file_name.c_str(), std::ios::out | std::ios::binary);
