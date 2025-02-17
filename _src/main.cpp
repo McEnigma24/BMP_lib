@@ -4,6 +4,7 @@
 #include "Bmp.h"
 #include "Bmp_RGB.h"
 
+#ifdef BUILD_EXECUTABLE
 int main(int argc, char* argv[])
 {
     srand(time(NULL));
@@ -12,3 +13,4 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+#endif
