@@ -41,7 +41,7 @@ else()
     set_target_properties(${EXE_NAME} PROPERTIES COMPILE_FLAGS "-m64" LINK_FLAGS "-m64")
 endif()
 
-option(CTEST_ACTIVE "Testing is active" ON)
+option(CTEST_ACTIVE "Testing is active" OFF)
 
 if(CTEST_ACTIVE)
 
